@@ -1,0 +1,2 @@
+javac ==> compilador usar em .scala)
+javap ==> interpretador bytecode (usar em .class)

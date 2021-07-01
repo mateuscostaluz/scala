@@ -1,0 +1,18 @@
+Traits
+Parecido com a ideia de interface usando extends
+Não necessário colocar tipo de retorno, mas é interessante
+Não precisa usar palavra-chave Abstract, o fato de não ter o corpo já diz que o método é abstrato
+def format(msg: String): String = s"[logging] $msg" ==> Também é possível definir método com corpo
+
+object ---NOME OBJETO--- extends App {
+  val ---NOME VAL--- = ... (qualquer coisa)
+  var ---NOME VAR--- = ... (qualquer coisa)
+}
+// para evitar expected class or object definition
+
+EXEMPLO ==> class SimpleLogger extends Logging with SimpleFromatLogger
+/\ extends ==> porque o primeiro elemento que é herdado (classe ou trait) usa-se extends
+and with ==> para usar a trait (podem ser adicionadas outras traits)
+
+trait ==> membros concretos com format abstrato
+DESVANTAGEM TRAIT ==> Classes podem receber elementos como parâmetros construtor e trait não

@@ -1,0 +1,2 @@
+def connect(host: String = "localhost", port: Int = 8080) ==> define parâmetros padrão
+caso queira usar somente um dos parâmetros, basta colocar o nome = valor, exemplo: new URL().connect(port = 7070), que irá retornar localhost - 7070 (usa-se para que o valor não seja o valor do primeiro parâmetro), não esquecer () mesmo sem parâmetros para que seja definido o valor padrão, para usar sem parênteses é necessário SOBRECARREGAR O MÉTODO

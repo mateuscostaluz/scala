@@ -1,0 +1,27 @@
+OBJECTS E A AUSêNCIA DA PALAVRA CHAVE STATIC
+
+Método auxiliar ou constante global (PÉSSIMO EM OO)
+Não existe static em Scala, precisa fazer de outra forma usando a palavra object
+
+object Util {
+	val PI = 3.14
+}
+// (objeto singleton da classe Util, onde não se instancia objetos dessa classe)
+
+object Test extends App {
+	println(Util.PI)
+}
+// acesso igual a varáveis staticas em Java
+
+App ==> já tem o esqueleto para executar uma aplicação Scala, inclui coisas como main e precisa estar em um object (SEMPRE OBJECT, NUNCA EM CLASSE)
+/\ se for em classe não estará statico e dará erro
+
+Uso comum de objetos staticos ==> métodos de fábrica
+
+object Util do exemplo ==> por exemplo, objeto sozinho
+
+Objeto que tem o mesmo nome da classe ==> Companion Object
+/\ objeto companheiro da classe
+\/ além dos métodos de fábrica e da consequente melhoria da semântica do código, tem a vantagem técnica de um Companion Object === consegue acessar membros privados do Objeto
+
+MODULE$ ==> objeto singleton

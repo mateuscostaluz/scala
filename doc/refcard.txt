@@ -1,0 +1,124 @@
+scala ==> abre editor de código tal como python (terminal)
+javac ==> compilador usar em .scala)
+javap ==> interpretador bytecode (usar em .class)
+javap -p arquivo.class ==> Mostra elementos privados e assinaturas métodos utilizados
+var ==> variável
+val ==> constante === private Final nome = "Mateus" (exemplo)
+
+Inferido ou declarado
+var || val nome = "Mateus" (exemplo)
+var: || val nome: String = "Mateus" (exemplo)
+
+Objeto de uma classe
+Acesso feito diretamente pelo objeto.atributo (não significa desacoplamento)
+
+Entendendo idade_$eq (Setter)
+def idade_=(x Int) = x
+
+// CRIA UMA VARIÁVEL COM GETTER E SETTER SOBRESCRITOS
+private var _idade = 25
+def idade_=(x: Int) = _idade = x // SETTER
+def idade = _idade				 // GETTER
+
+require ==> exception
+
+return existe em scala mas usá-la é uma má prática
+inferência do tipo de retorno (exemplo)
+
+declarar tipo de retorno da função é opcional, declarado apenas quando necessário deixar mais claro assinatura da função
+
+List cria uma lista (colocar elementos entre parênteses)
+
+Uma função que recebe outra função como parâmetro (Linguagem Programação Funcional)
+
+Se o método não recebe parâmetro algum, os parênteses são opcionais
+Para impedir que o método seja chamado SEM parênteses basta removê-los na declaração
+/\ métodos com cara de atributo
+\/ por isso podemos substituir "def" por "val", por exemplo
+
+class Pessoa ==> cria uma classe (sem mais informações como atributos ou métodos não precisa de chaves)
+new ==> operador para criar objetos
+
+Padrão de criar objetos prontos para serem usados
+construtor ==> class Pessoa(nome: String, idade: Int)
+construtor ==> def this(argumentos) = this(argumentos para construir conforme classe)
+
+class Pessoa(val nome: String, val idade: Int) ==> nome e idade viram atributos da classe Pessoa
+/\ sem o val antes do atributo não o transforma em atributo (membro) da classe ==> val === constante === atributo imutável
+\/ com o var é possível mudar o atributo
+
+LEMBRAR QUE OS SETTERS SÃO AUTOMÁTICOS QUANDO É VARIÁVEL E NÃO CONSTANTE
+
+OBJECTS E A AUSêNCIA DA PALAVRA CHAVE STATIC
+
+Método auxiliar ou constante global (PÉSSIMO EM OO)
+Não existe static em Scala, precisa fazer de outra forma usando a palavra object
+
+object Util {
+	val PI = 3.14
+}
+// (objeto singleton da classe Util, onde não se instancia objetos dessa classe)
+
+object Test extends App {
+	println(Util.PI)
+}
+// acesso igual a varáveis staticas em Java
+
+App ==> já tem o esqueleto para executar uma aplicação Scala, inclui coisas como main e precisa estar em um object (SEMPRE OBJECT, NUNCA EM CLASSE)
+/\ se for em classe não estará statico e dará erro
+
+Uso comum de objetos staticos ==> métodos de fábrica
+
+object Util do exemplo ==> por exemplo, objeto sozinho
+
+Objeto que tem o mesmo nome da classe ==> Companion Object
+/\ objeto companheiro da classe
+\/ além dos métodos de fábrica e da consequente melhoria da semântica do código, tem a vantagem técnica de um Companion Object === consegue acessar membros privados do Objeto
+
+MODULE$ ==> objeto singleton
+
+http://www.scala-lang.org/
+List ==> List.empty
+val listaVazia = List.empty (exemplo, cria um objeto da classe List)
+object List !== class List
+val numeros = List.range(1,10)
+/\ cria uma lista com todos os números de 1 a 9
+\/ 10 não inclusivo
+val numeros = List.range(1, 10, 2)
+/\ cria uma lista com todos os numeros de 1 a 9 em intervalo de 2 números (1, 3, 5, 7, 9)
+import scala.io.Source (importa a classe Source) ==> possui métodos para ler dados de arquivos ou outras fontes
+val linhas = Source.fromURL("http://jcranky.com").getLines() ==> pega todas as linhas da URL
+/\ linhas.filter(_.contains("JCranky")).foreach(println) ==> filtra e imprime todas as linhas com "JCranky"
+
+def connect(host: String = "localhost", port: Int = 8080) ==> define parâmetros padrão
+caso queira usar somente um dos parâmetros, basta colocar o nome = valor, exemplo: new URL().connect(port = 7070), que irá retornar localhost - 7070 (usa-se para que o valor não seja o valor do primeiro parâmetro), não esquecer () mesmo sem parâmetros para que seja definido o valor padrão, para usar sem parênteses é necessário SOBRECARREGAR O MÉTODO
+
+Traits
+Parecido com a ideia de interface usando extends
+Não necessário colocar tipo de retorno, mas é interessante
+Não precisa usar palavra-chave Abstract, o fato de não ter o corpo já diz que o método é abstrato
+def format(msg: String): String = s"[logging] $msg" ==> Também é possível definir método com corpo
+
+object ---NOME OBJETO--- extends App {
+  val ---NOME VAL--- = ... (qualquer coisa)
+  var ---NOME VAR--- = ... (qualquer coisa)
+}
+// para evitar expected class or object definition
+
+EXEMPLO ==> class SimpleLogger extends Logging with SimpleFromatLogger
+/\ extends ==> porque o primeiro elemento que é herdado (classe ou trait) usa-se extends
+and with ==> para usar a trait (podem ser adicionadas outras traits)
+
+trait ==> membros concretos com format abstrato
+DESVANTAGEM TRAIT ==> Classes podem receber elementos como parâmetros construtor e trait não
+
+https://docs.scala-lang.org/overviews/core/string-interpolation.html
+Para entender interpolação e demais pacotes
+C, O, P, T ==> Class, Object, Package, Trait
+Possível pesquisa usando filtro, por exemplo por pacote ==> clicando no focus e hide esconde
+Classes possuem link para o código fonte ==> Source
+Linear Supertypes ==> quais são os supertipos de um determinado elemento, linear porque está linearizado (conflitos de herança que podem existir, por exemplo)
+Know Subclasses ==> todas as subclasses conhecidas
+Type Hierarchy ==> quem são os pais, por exemplo, de cada classe
+Filtro dentro da classe para limitar os membros de uma determinada classe
+Filtrar por letras ==> filtra todos os elementos de cada letra, por exemplo (index)

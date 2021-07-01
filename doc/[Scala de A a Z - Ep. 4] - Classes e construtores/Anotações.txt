@@ -1,0 +1,17 @@
+CLASSES E CONSTRUTORES DE CLASSES
+Como toda linguagem orientada a objetos (Scala f(x) e OO)
+
+Declaração de classes em Scala e seus construtores estão interligados
+
+class Pessoa ==> cria uma classe (sem mais informações como atributos ou métodos não precisa de chaves)
+new ==> operador para criar objetos
+
+Padrão de criar objetos prontos para serem usados
+construtor ==> class Pessoa(nome: String, idade: Int)
+construtor ==> def this(argumentos) = this(argumentos para construir conforme classe)
+
+class Pessoa(val nome: String, val idade: Int) ==> nome e idade viram atributos da classe Pessoa
+/\ sem o val antes do atributo não o transforma em atributo (membro) da classe ==> val === constante === atributo imutável
+\/ com o var é possível mudar o atributo
+
+LEMBRAR QUE OS SETTERS SÃO AUTOMÁTICOS QUANDO É VARIÁVEL E NÃO CONSTANTE

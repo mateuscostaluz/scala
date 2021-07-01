@@ -1,0 +1,9 @@
+return existe em scala mas usá-la é uma má prática
+declarar tipo de retorno da função é opcional, declarado apenas quando necessário deixar mais claro assinatura da função
+quando a implementação tem apenas UMA LINHA pode-se remover as chaves
+List cria uma lista (colocar elementos entre parênteses)
+Uma função que recebe outra função como parâmetro (Linguagem Programação Funcional)
+Se o método não recebe parâmetro algum, os parênteses são opcionais
+Para impedir que o método seja chamado SEM parênteses basta removê-los na declaração
+/\ métodos com cara de atributo
+\/ por isso podemos substituir "def" por "val", por exemplo

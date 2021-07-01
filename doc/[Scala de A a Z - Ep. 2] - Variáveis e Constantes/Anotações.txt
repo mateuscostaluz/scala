@@ -1,0 +1,38 @@
+VARIÁVEIS
+
+Declaração usando palavra chave "var" (mesmo sem tipo variável, compilador scala infere o tipo, NÃO DINÂMCO, ESTÁTICO!)
+
+// infere como String
+var nome = "Mateus"
+
+// declara como String
+var nome: String = "Mateus"
+
+scala ==> abre editor de código tal como python (terminal)
+
+CONSTANTES
+
+Declaração usando palavra chave "val" (mesmo sem tipo variável, compilador scala infere o tipo, NÃO DINÂMCO, ESTÁTICO!)
+
+val (mais fácil do que colocar final String nome, por exemplo, val é definição de constante)
+
+// infere como String
+val nome = "Mateus"
+
+// declara como String
+val nome: String = "Mateus"
+
+QUALQUER COISA PODE SER USADA COMO IDENTIFICADOR!
+
+Acessa o atributo de uma classe diretamente embora isso não signifique desencapsulamento!
+Em scala os atributos estão sempre encapsulados!
+
+javap -p arquivo.class ==> Mostra elementos privados e assinaturas métodos utilizados
+
+Entendendo idade_$eq (Setter)
+def idade_=(x Int) = x
+
+// CRIA UMA VARIÁVEL COM GETTER E SETTER SOBRESCRITOS
+private var _idade = 25
+def idade_=(x: Int) = _idade = x // SETTER
+def idade = _idade				 // GETTER

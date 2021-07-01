@@ -1,0 +1,10 @@
+https://docs.scala-lang.org/overviews/core/string-interpolation.html
+Para entender interpolação e demais pacotes
+C, O, P, T ==> Class, Object, Package, Trait
+Possível pesquisa usando filtro, por exemplo por pacote ==> clicando no focus e hide esconde
+Classes possuem link para o código fonte ==> Source
+Linear Supertypes ==> quais são os supertipos de um determinado elemento, linear porque está linearizado (conflitos de herança que podem existir, por exemplo)
+Know Subclasses ==> todas as subclasses conhecidas
+Type Hierarchy ==> quem são os pais, por exemplo, de cada classe
+Filtro dentro da classe para limitar os membros de uma determinada classe
+Filtrar por letras ==> filtra todos os elementos de cada letra, por exemplo (index)
